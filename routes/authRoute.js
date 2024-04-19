@@ -13,7 +13,7 @@ router.post('/register',registerController)
 router.post('/login',loginController)
 
 //test controller
-router.get('/test',requireSignin,isAdmin ,testController)
+router.get('/test',testController)
 
 //protected auth for user
 // router.get('/user-auth',requireSignin,isUser,(req,res)=>{
