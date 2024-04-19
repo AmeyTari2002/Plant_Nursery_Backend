@@ -32,7 +32,7 @@ app.use(morgan('dev'))
 app.use(cors(
     {
         Credential: true,
-        origin: "http://localhost:5173"
+        origin: "https://ameytari-plant-nursery-app.vercel.app"
     }
 ))
 
