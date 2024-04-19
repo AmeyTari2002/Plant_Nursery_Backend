@@ -7,7 +7,7 @@ import cors from 'cors'
 import path from 'path'
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoute from './routes/productRoute.js'
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 
 //configure Env
 dotenv.config();
@@ -17,8 +17,8 @@ connectDb();
 
 
 // esmodulefix
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
 // console.log(path.join(__dirname,'./client/dist'))
 //rest object
 const app = express()
@@ -27,7 +27,7 @@ const app = express()
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname,'./client/dist')))
+// app.use(express.static(path.join(__dirname,'./client/dist')))
 
 app.use(cors(
     {
@@ -45,9 +45,10 @@ app.use('/api/v1/product', productRoute)
 
 
 //api
-app.use('*',function(req,res){
-    res.sendFile(path.join(__dirname,'./client/dist/index.html'))
-})
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to ecommerce app</h1>");
+});
+
 
 
 
