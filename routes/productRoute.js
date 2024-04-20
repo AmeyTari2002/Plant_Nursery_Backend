@@ -7,7 +7,7 @@ import formidable from "express-formidable";
 //router
 router.post('/create-product', requireSignin,formidable(), isAdmin,productController )
 router.put('/update-product/:pid', requireSignin,formidable(), isAdmin,updateController )
-router.get('/   ', getProductController)
+router.get('/get-product', getProductController)
 router.get('/get-product/:slug', getSingleProductController)
 router.get('/product-photo/:pid', productPhotoController)
 router.get('/product/:pid', deleteProductController)
